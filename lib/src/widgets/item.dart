@@ -9,6 +9,9 @@ class Item extends StatelessWidget {
   final bool useEmoji;
   final TextStyle textStyle;
   final bool withCountryNames;
+  final BoxDecoration boxDecoration;
+  final EdgeInsetsGeometry padding;
+  final double space;
 
   const Item({
     Key key,
@@ -17,25 +20,30 @@ class Item extends StatelessWidget {
     this.useEmoji,
     this.textStyle,
     this.withCountryNames = false,
+    this.boxDecoration,
+    this.padding,
+    this.space = 12,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Container(
+      decoration: boxDecoration,
+      padding: padding,
       child: Row(
         textDirection: TextDirection.ltr,
         mainAxisAlignment: MainAxisAlignment.start,
         mainAxisSize: MainAxisSize.min,
         children: <Widget>[
-          SizedBox(width: 12.0),
+          SizedBox(width: space),
           _Flag(
             country: country,
             showFlag: showFlag,
             useEmoji: useEmoji,
           ),
-          SizedBox(width: 12.0),
+          if (showFlag) SizedBox(width: space),
           Text(
-            '${(country?.dialCode ?? '').padRight(5, "   ")}',
+            '${(country?.dialCode ?? '')}',
             textDirection: TextDirection.ltr,
             style: textStyle,
           ),
