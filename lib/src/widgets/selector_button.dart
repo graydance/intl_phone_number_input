@@ -86,6 +86,9 @@ class SelectorButton extends StatelessWidget {
                 showFlag: selectorConfig.showFlags,
                 useEmoji: selectorConfig.useEmoji,
                 textStyle: selectorTextStyle,
+                boxDecoration: selectorConfig.boxDecoration,
+                padding: selectorConfig.padding,
+                space: selectorConfig.space,
               ),
             ),
           );

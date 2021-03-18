@@ -32,6 +32,10 @@ class SelectorConfig {
   /// [setSelectorButtonAsPrefixIcon], this sets/places the selector button inside the [TextField] as a prefixIcon.
   final bool setSelectorButtonAsPrefixIcon;
 
+  final BoxDecoration boxDecoration;
+  final EdgeInsetsGeometry padding;
+  final double space;
+
   const SelectorConfig({
     this.selectorType = PhoneInputSelectorType.DROPDOWN,
     this.showFlags = true,
@@ -39,5 +43,8 @@ class SelectorConfig {
     this.backgroundColor,
     this.countryComparator,
     this.setSelectorButtonAsPrefixIcon = false,
+    this.boxDecoration,
+    this.padding,
+    this.space,
   });
 }
